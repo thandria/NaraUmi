@@ -21,3 +21,6 @@ gradlew
 gradlew.bat
 *.keystore
 *.jks
+.env
+.env.local
+.env.*.local
