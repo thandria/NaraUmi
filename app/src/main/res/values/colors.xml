@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="nav_bg">#7005CE</color>
+    <color name="bg_Purple">#4B1277</color>
+    <color name="bg_DarkCardPurple">#6F05CC</color>
+    <color name="bg_TopCardPurple">#8700FD</color>
+    <color name="correct_green">#4CAF50</color>
+    <color name="incorrect_red">#F44336</color>
+    <color name="disabled_gray">#808080</color>
+
+</resources>

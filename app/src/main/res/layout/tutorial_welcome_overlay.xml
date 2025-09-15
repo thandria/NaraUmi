@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tutorial_overlay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CC000000"
+    android:visibility="gone"
+    android:clickable="true"
+    android:focusable="true">
+
+<LinearLayout
+android:layout_gravity="center"
+android:orientation="vertical"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:padding="24dp"
+android:background="@drawable/round_bg_rect">
+
+<TextView
+    android:id="@+id/tutorial_message"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Welcome!\n\nFeeling ready to embark on your language learning journey?\n\nInterested in a quick tour first?"
+    android:textSize="20sp"
+    android:textColor="#FFFFFF"
+    android:paddingBottom="16dp"
+    android:textAlignment="center"
+    />
+
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <Button
+        android:id="@+id/start_tutorial_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's dive in!"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:background="@drawable/rounded_square_purple"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="12dp"
+        />
+
+    <Button
+        android:id="@+id/skip_tutorial_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I'll pass."
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:background="@drawable/rounded_square_purple"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="12dp"
+        android:layout_marginStart="16dp"
+        />
+</LinearLayout>
+</LinearLayout>
+    </FrameLayout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg_Purple"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Header / Lesson title -->
+    <include
+        layout="@layout/roadmap_header"
+        android:id="@+id/rm_header_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Completion Content Container -->
+    <LinearLayout
+        android:id="@+id/completion_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        app:layout_constraintTop_toBottomOf="@id/rm_header_section"
+        app:layout_constraintBottom_toTopOf="@id/activities_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.85">
+
+        <!-- Round Background Container -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_bg_rect"
+            android:elevation="4dp"
+            android:paddingBottom="24dp"
+            android:paddingTop="24dp">
+
+            <!-- Brain Image -->
+            <ImageView
+                android:id="@+id/completion_icon"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/review_learned_vocab"
+                android:contentDescription="Completion icon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
+
+            <!-- Completion Message -->
+            <TextView
+                android:id="@+id/completion_message1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You have learned"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/completion_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Count -->
+            <TextView
+                android:id="@+id/completion_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:textColor="@android:color/white"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/completion_message1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Learned Type (Kana or Phrases) -->
+            <TextView
+                android:id="@+id/completion_learned_words"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Words!"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/completion_amount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <!-- Activities Buttons -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activities_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/btn_match"
+            style="@style/AppButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="MATCH"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_flash"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintWidth_percent="0.4"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/btn_flash"
+            style="@style/AppButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="FLASH"
+            app:layout_constraintStart_toEndOf="@+id/btn_match"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.4"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/btn_write"
+            style="@style/AppButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="WRITE"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_read_point"
+            app:layout_constraintTop_toBottomOf="@id/btn_match"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintWidth_percent="0.4"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/btn_read_point"
+            style="@style/AppButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="READ &amp; POINT"
+            app:layout_constraintStart_toEndOf="@+id/btn_write"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_flash"
+            app:layout_constraintWidth_percent="0.4"
+            android:layout_margin="8dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Return to Lessons Button -->
+    <TextView
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Return to Lessons"
+        android:background="@drawable/rounded_header_bg"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="12dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

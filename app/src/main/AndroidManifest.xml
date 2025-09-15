@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.JapLearn"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ScanActivity"
+            android:theme="@style/CustomTranslucentTheme" />
+        <activity android:name=".ResultActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".LessonActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".MatchTilesActivity"
+            android:parentActivityName=".LessonActivity"/>
+
+        <activity
+            android:name=".KanaLearningActivity"
+            android:exported="false"
+            android:parentActivityName=".LessonActivity" />
+        <activity
+            android:name=".DecksActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity android:name=".SavedWordsActivity"
+            android:parentActivityName=".DecksActivity"/>
+
+        <activity
+            android:name=".MatchGroupSelectionActivity"
+            android:parentActivityName=".LessonActivity" />
+        <activity android:name=".CollectionsActivity"/>
+        <activity android:name=".CollectionDetailActivity"/>
+        <activity
+            android:name=".FlashGroupSelectionActivity"
+            android:label="Select Flashcard Group"
+            android:parentActivityName=".LessonActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LessonActivity" />
+        </activity>
+        <activity android:name=".ReadAndPointActivity" />
+
+        <activity
+            android:name=".FlashcardReviewActivity"
+            android:label="Flashcards"
+            android:parentActivityName=".FlashGroupSelectionActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".FlashGroupSelectionActivity" />
+        </activity>
+        <activity
+            android:name=".WriteGroupSelectionActivity"
+            android:label="Select Writing Group"
+            android:parentActivityName=".LessonActivity"/>
+
+        <activity
+            android:name=".WritePracticeActivity"
+            android:label="Writing Practice"
+            android:parentActivityName=".WriteGroupSelectionActivity" />
+        <activity android:name=".KanaCompletionActivity"
+            android:label="Lesson Complete"
+            android:parentActivityName=".LessonActivity" />
+
+    </application>
+
+</manifest>
